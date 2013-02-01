@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<%unless @person.nil?%>
+<tr>
+Name : <%=@person.full_name%><br />
+User : <%=@person.user.email_address unless @person.user.nil?%> <br />
+</tr>
+<%end%>
+<tr>
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
+</tr>

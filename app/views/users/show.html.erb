@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<%unless @user.nil?%>
+<p>
+  <b>Email address</b>
+  <%= @user.email_address %> <br />
+  <b>Persons</b>
+<%unless @persons.empty?%>
+<%@persons.each do |person|%>
+<%=person.full_name%><br />  
+<%end%>
+<%end%>
+</p>
+<%end%>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
