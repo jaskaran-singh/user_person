@@ -11,4 +11,5 @@ module UsersHelper
     @person = @user.persons.build
     render :partial=>'new_form'
   end
+   
 end

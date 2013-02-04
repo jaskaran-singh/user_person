@@ -5,9 +5,24 @@
   <%= @user.email_address %> <br />
   <b>Persons</b>
 <%unless @persons.empty?%>
+<table>
+	<tr style="background-color: yellow;">
+		<td>Name</td>
+		<td>Email</td>
+		<td>Gender</td>
+		<td>Type</td>
+	</tr>
+	<body>
 <%@persons.each do |person|%>
-<%=person.full_name%><br />  
+<tr>
+	<td><%=person.full_name%></td>
+	<td><%=person.email%></td>
+	<td><%=person.gender%></td>
+	<td><%=person.person_type%></td>
+</tr>    
 <%end%>
+</body>
+</table>
 <%end%>
 </p>
 <%end%>

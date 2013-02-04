@@ -1,5 +1,9 @@
 NewUser::Application.routes.draw do
-  resources :people
+  resources :people do
+    collection do
+      get :form_new
+    end
+  end
 
 
   resources :users do

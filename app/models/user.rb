@@ -4,4 +4,9 @@ class User < ActiveRecord::Base
 :message => "Enter a valid email address." }
   has_many :persons
   accepts_nested_attributes_for :persons
+  def new_person_attributes=attributes
+  attributes.each do |record|
+  persons.build(record)
+  end
+  end
 end

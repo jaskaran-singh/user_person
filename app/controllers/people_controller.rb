@@ -76,4 +76,10 @@ class PeopleController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def form_new
+    puts "the params are#{params}"
+    render :partial => 'users/new_form', :locals => {:f => Person.new}
+    
+  end
 end

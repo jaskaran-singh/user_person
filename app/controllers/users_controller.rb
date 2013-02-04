@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   include UsersHelper
+  include PeopleHelper
   def index
     @users = User.all
 
@@ -26,8 +27,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-    @user.persons.build
-    respond_to do |format|
+      respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-     # @person = @user.persons.build(:user_id=>@user.id)
+    # @person = @user.persons.build(:user_id=>@user.id)
   end
   # def edit_link
     # @user = User.find(params[:id])
